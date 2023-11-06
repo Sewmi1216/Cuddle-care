@@ -1,0 +1,141 @@
+<div class="grid-container">
+  <div class="responsive-container">
+
+    <div class="d-flex justify-content-between align-items-center custom-margin">
+      <div style="background-color: #e8e3fc;
+    width: 544px;
+    height: 120px;
+    padding: 5px 0 0 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px 0 #563393;
+">
+        <img class="topic_image" src="../../assets/sitter.svg">
+        <h3 style="font-family: 'Sofia Sans', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: #39315d;
+    padding-left: 10px;
+    padding-top: 37px;">Manage User Accounts..</h3>
+      </div>
+
+      <!-- Search bar -->
+      <form action="#">
+        <div class="form-input">
+          <input type="search" placeholder="Search by name...">
+          <button type="button" class="search-btn"><i class='bx bx-search'></i></button>
+        </div>
+      </form>
+
+    </div>
+
+
+
+<div class="main-content">
+  <div class="container mt-7">
+    <!-- Table -->
+    <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Email Address</th>
+              <th scope="col">Role</th>
+
+              <th scope="col">Account Status</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr *ngFor="let UserItem of userArray">
+              <th scope="row">
+                <div class="media align-items-center">
+                  <a href="#" class="avatar rounded-circle mr-3">
+                    <img alt="Image placeholder" src="assets/sewmi.jpg">
+                  </a>
+                  <div class="media-body">
+                    <span class="mb-0 text-sm">{{UserItem.firstName}}</span>
+                  </div>
+                </div>
+              </th>
+
+              <td (click)="goToUserDetails(user)">
+                <!-- <a routerLink="'/admin/view_babysitter_verify',UserItem.id" >{{UserItem.email}}</a> -->
+                <a [routerLink]="['/admin/view_babysitter_verify',UserItem._id]">{{ UserItem.email }}</a>
+              </td>
+              <td>{{UserItem.role}}</td>
+
+              <td>
+                <span class="mb-0 text-sm" style="color: darkgreen; font-weight: bold;">{{UserItem.status}}</span>
+              </td>
+
+
+
+            </tr>
+
+            <!-- <tr>
+              <th scope="row">
+                <div class="media align-items-center">
+                  <a href="#" class="avatar rounded-circle mr-3">
+                    <img alt="Image placeholder" src="assets/sewmi.jpg">
+                  </a>
+                  <div class="media-body">
+                    <span class="mb-0 text-sm">Sewmi Thimaya</span>
+                  </div>
+                </div>
+              </th>
+
+              <td>
+                <a routerLink="/admin/verify_babysitter">sewmithimaya@gmail.com</a>
+              </td>
+
+              <td>
+                <span class="mb-0 text-sm" style="color: red; font-weight: bold;">Deactive</span>
+              </td>
+
+
+
+
+            </tr> -->
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card-footer py-4">
+          <nav aria-label="...">
+            <ul class="pagination justify-content-end mb-0">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">
+                  <i class="fas fa-angle-left"></i>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">
+                  <i class="fas fa-angle-right"></i>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+

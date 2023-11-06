@@ -1,0 +1,116 @@
+<div class="container-fluid">
+  <div class="requested-babysitter">Requested Babysitters</div>
+
+    <!-- Search bar -->
+    <form action="#">
+      <div class="form-input">
+        <input type="search" placeholder="Search...">
+        <button type="button" class="search-btn"><i class='bx bx-search'></i></button>
+      </div>
+    </form>
+
+
+  <div class="main-content">
+    <div class="container mt-7">
+      <!-- Table -->
+      <!-- <div class="row">
+        <div class="col">
+          <div class="card shadow"> -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let requestForm of requestForms let i = index">
+                      <td *ngIf="isHiredList[i] === false">
+                        {{formattedDates[i]}}
+                      </td>
+                      <td *ngIf="isHiredList[i] === false">
+                        <div class="media align-items-center">
+                          <a href="#" class="avatar rounded-circle mr-3">
+                            <img alt="Image placeholder" [src]="imageUrls[i]">
+                          </a>
+                          <div class="media-body">
+                            <span class="mb-0 text-sm">{{babysitterNames[i]}}</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td *ngIf="isHiredList[i] === false">
+                        <div *ngIf="requestForm.isAccept === -1">
+                          <span class="mb-0 text-sm" style="color: blue; font-weight: bold;">Pending</span>&nbsp;&nbsp;
+                        </div>
+                        <div *ngIf="requestForm.isAccept === 1">
+                          <span class="mb-0 text-sm" style="color: darkgreen; font-weight: bold;">Accepted</span>&nbsp;&nbsp;
+                        </div>
+                        <div *ngIf="requestForm.isAccept === 0">
+                          <span class="mb-0 text-sm" style="color: red; font-weight: bold;">Rejected</span>&nbsp;&nbsp;
+                        </div>
+                      </td>
+                      <td *ngIf="isHiredList[i] === false"> 
+                        <div *ngIf="requestForm.isAccept === 1 && !parent.babysitter">
+                          <a [routerLink]="['/parent/my_babysitter', requestForm.Babysitter]">
+                            <button class="btn btn-primary" style="background-color: cornflowerblue;border-radius: 16px;" (click)="confirmBabysitter(requestForm.Babysitter, requestForm.parent)">Confirm</button>
+                          </a>
+                        </div>
+                        <div *ngIf="requestForm.isAccept === 1 && parent.babysitter">
+                          <button class="btn btn-primary" [disabled]="parent.babysitter" style="background-color: cornflowerblue;border-radius: 16px;">Confirm</button>
+                        </div>
+                        <div *ngIf="requestForm.isAccept === 0">
+                          <button class="btn btn-warning" style="background-color: red; border-radius: 16px;" data-bs-toggle="modal" data-bs-target="#reviewModal">View</button>
+                          <div class="modal" id="reviewModal">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <div class="reason">Reason for rejection</div>
+                                </div>
+                                <div class="form-floating">
+                                  <textarea class="form-control" id="floatingTextarea" [(ngModel)]="requestForm.reason" readonly></textarea>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                  <button type="button" class="btn btn-danger" (click)="deleteRequest(requestForm._id)" data-bs-dismiss="modal" style="margin-bottom: 1rem; margin-right:1rem">Delete</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>                       
+                  </tr>
+                </tbody>
+              </table>
+   
+            <div class="card-footer py-4">
+              <nav aria-label="...">
+                <ul class="pagination justify-content-end mb-0">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">
+                      <i class="fas fa-angle-left"></i>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">
+                      <i class="fas fa-angle-right"></i>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      <!-- </div>
+    </div>
+  </div> -->
+</div>

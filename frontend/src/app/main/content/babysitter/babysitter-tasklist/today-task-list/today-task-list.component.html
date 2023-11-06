@@ -1,0 +1,52 @@
+<div class="btn-container">
+  <div class="btn-row">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-lg"> <!-- Reduced to col-lg-8, adjust as needed -->
+          <div class="card rounded-0 border-0 shadow">
+            <div class="card-body p-4">
+              <h2>Task List Name: {{ taskListForm.taskListName }}</h2>
+              <div class="table-responsive">
+                <table class="table table-lg">
+                  <thead>
+                  <tr>
+                    <th>#</th>
+                    <th scope="col">Task Name</th>
+                    <th scope="col">Time</th>
+<!--                    <th scope="col">Send Reminders</th>-->
+                    <th scope="col">Any Note</th>
+                    <th scope="col">Completed</th>
+                  </tr>
+                  </thead>
+                  <!-- ... -->
+                  <tbody>
+                  <tr *ngFor="let task of taskDetails; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>
+                      <input type="text" [value]="task.taskName" disabled />
+                    </td>
+                    <td>
+                      <input type="text" [value]="task.time" disabled />
+                    </td>
+<!--                    <td>-->
+<!--                      <input type="checkbox" [checked]="task.isRemainder" disabled />-->
+<!--                    </td>-->
+                    <td>
+                      <input type="text" [value]="task.specialNote || 'N/A'" disabled />
+                    </td>
+                    <td>
+                      <input type="checkbox" [checked]="task.isCompleted" disabled />
+                    </td>
+                  </tr>
+                  </tbody>
+                  <!-- ... -->
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- CHARTS END HERE -->

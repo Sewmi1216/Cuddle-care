@@ -1,0 +1,96 @@
+<div class="path">
+  Baby-Details > Growth Parameters
+</div>
+<div class="title my-4">
+  <div class="card-body">
+    <h1 class="card-title">Growth Parameters</h1>
+  </div>
+  <img src="../../assets/parameters.svg" class="title-img-top" alt="...">
+</div>
+<div class="main-container">
+  <div class="age-group">
+    <p>Age Group</p>
+    <select class="form-select" aria-label="Default select example" (change)="changeAgeGroup($event)" [(ngModel)]="selectedAgeGroupId">
+      <option [value]="ageGroup._id" *ngFor="let ageGroup of ageGroups">{{ ageGroup.type }}</option>
+    </select>
+  </div>
+  <div class="growth_development">
+    <h1>MOVEMENT/PHYSICAL DEVELOPMENT</h1>
+    <div class="growth_content">
+      <div class="list">
+        <div class="form-check">
+          <div class="parameter-item" *ngFor="let movementParameter of movementPhysicalDevelopmentParameters">
+            <div class="d-flex">
+              <p>{{ movementParameter.activity }}</p>
+              <input type="checkbox" class="form-check-input">
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="side_image">
+        <img src="../../assets/growth_dev.svg" class="title-img-top" alt="..." style="width:300px">
+      </div>
+  </div>
+</div>
+  <div class="communication">
+    <h1>Language and Communication</h1>
+<!--    <p style="font-weight: bold">-->
+<!--      In this phase, many babies start to understand simple commands and requests. They’ll also mimic more of the sounds they hear as they develop basic language skills.</p>-->
+    <div class="communication_content">
+      <div class="communication_list">
+        <div class="form-check">
+          <div class="parameter-item" *ngFor="let languageParameter of languageAndCommunicationParameters">
+            <div class="d-flex">
+              <p>{{ languageParameter.activity }}</p>
+              <input type="checkbox" class="form-check-input">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="side_image">
+        <img src="../../assets/communication.svg" class="title-img-top" alt="..." style="width:300px">
+      </div>
+    </div>
+  </div>
+
+    <div class="growth_development">
+      <h1>SOCIAL/EMOTIONAL DEVELOPMENT</h1>
+      <div class="growth_content">
+        <div class="list">
+          <div class="form-check">
+            <div class="parameter-item" *ngFor="let socialParameter of socialEmotionalDevelopmentParameters">
+              <div class="d-flex">
+                <p>{{ socialParameter.activity }}</p>
+                <input type="checkbox" class="form-check-input">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="side_image">
+          <img src="../../assets/growth_dev.svg" class="title-img-top" alt="..." style="width:300px">
+        </div>
+      </div>
+    </div>
+
+    <div class="growth_development">
+      <h1>COGNITIVE (learning, thinking, problem-solving) DEVELOPMENT</h1>
+      <div class="growth_content">
+        <div class="list">
+          <div class="form-check">
+            <div class="parameter-item" *ngFor="let cognitiveParameter of cognitiveDevelopmentParameters">
+              <div class="d-flex">
+                <p>{{ cognitiveParameter .activity }}</p>
+                <input type="checkbox" class="form-check-input">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="side_image">
+          <img src="../../assets/growth_dev.svg" class="title-img-top" alt="..." style="width:300px">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

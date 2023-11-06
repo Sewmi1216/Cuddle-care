@@ -1,0 +1,121 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <div class="card rounded-0 border-0 shadow">
+        <div class="card-body p-5">
+          <form #taskListFormForm="ngForm" id="taskListForm">
+            <div class="table-responsive">
+              <h2>Create Task list</h2>
+              <div class="form-group">
+                <label for="listName">Task List Name:</label>
+                <input class="form-control rounded-0" type="text" id="listName" name="listName" [(ngModel)]="nameOfTaskList" required #listNameInput="ngModel">
+                <div *ngIf="listNameInput.invalid && (listNameInput.dirty || listNameInput.touched)">
+                  <div class="alert alert-danger">
+                    Task List Name is required.
+                  </div>
+                </div>
+              </div>
+            <table class="table">
+              <thead>
+              <tr>
+                <th scope="col">Task Name</th>
+                <th scope="col">Time</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tbody>
+              <tr>
+
+                <td><input class="form-control rounded-0" type="text" [(ngModel)]="taskName"  name="task" ></td>
+                <td>
+                  <input class="form-control rounded-0"  [(ngModel)]="time" [ngxTimepicker]="picker" name="time">
+                  <ngx-material-timepicker #picker></ngx-material-timepicker>
+                </td>
+                <td>
+                  <div class="icon-container">
+                  <button  type="button" class="btn btn-primary" (click)="addNewRow()">
+                    <i class="fas fa-plus "></i>
+                  </button>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+            <div class="table-wrapper">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th scope="col">Task Name</th>
+                  <th scope="col">Time</th>
+                  <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let task of taskListForm.tasks; let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{task.taskName}}</td>
+                  <td>{{task.time}}</td>
+
+                  <td>
+                    <button type="button" class="btn btn-danger btn-delete" (click)="deleteTaskDetails(i)">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3">
+              <button style="background-color: #563393; border-color: #563393" class="btn btn-danger"
+                      [disabled]="taskListFormForm.invalid" (click)="saveAsTemplate(); navigateToTemplatesPage()">
+                Save as a Template
+              </button>
+              <button style="background-color: #563393; border-color: #563393" class="btn btn-danger"
+                      [disabled]="taskListFormForm.invalid" (click)="saveAsTaskList(); openTaskListModal()"
+                      data-bs-toggle="modal" data-bs-target="#saveTaskListModal">
+                Save as a Task List
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="saveTaskListModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Task List</h4>
+        <button style="background-color: #39315d ; border-radius: 15px ;" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+        <!-- modal task list details with update and add date options-->
+        <form >
+
+
+
+
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+
+

@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<div class="container mt-5">
+    
+      
+        <div class="card">
+            <div class="card-1">
+                <div>
+                    <img src="assets/parent3.jpg" class="card-img-top" alt="Profile Picture">
+                        <div class="card-body">
+                            <h1 class="profile-name">{{userFullName}}</h1>
+                            <p class="card-text">Address: {{userProfile.address}}</p>
+                            <h4 class="card-main-title">Medical Details <i class="fa-solid fa-file" id="icon-1"></i></h4>
+                        </div>
+                </div>
+            
+
+                <div>
+                   
+                    <div  class="card mb-3">
+                        
+                        <div class="babysitter-data">
+                            <h3 class="card-main-title">Personal Details</h3>
+                            <div class="personal-data">
+                                <h4 class="card-title">Name</h4>
+                                <h5 class="details">{{userProfile.firstName}} {{userProfile.lastName}}</h5>
+                            </div> 
+                            <div class="personal-data">
+                                <h4 class="card-title">Role</h4>
+                                <h5 class="details">{{userProfile.role}}</h5>
+                            </div> 
+                          
+                            <h3 class="card-main-title">Contact</h3>
+                            <div class="personal-data">
+                                <h4 class="card-title">Phone Number</h4>
+                                <h5 class="details">{{userProfile.phone}}</h5>
+                            </div> 
+                            <div class="personal-data">
+                                <h4 class="card-title">Email </h4>
+                                <h5 class="details">{{userProfile.email}}</h5>
+                            </div> 
+                            
+                        </div>
+                        
+                        
+                        <!-- ... (Profile Details Card Content) ... -->
+                    </div>
+
+                    <!-- <div class="card custom-card" style="background-color: #FFFFFF;">
+                      <div class="right">
+                        <p class="font-weight-bold">Qualification Details</p>
+                        <div *ngFor="let qualification of qualificationList" >
+                          <!-- {{qualification}} -->
+                          <!-- <img [src]="qualification" alt="Qualification Image">
+                        </div>
+                      </div>
+                    </div> --> -->
+                    
+                    
+                    
+                </div>
+        </div>
+
+        </div>
+    
+ 
+        
+  
+        <!-- Qualifications Card -->
+        <!-- <div class="card-1">
+          <div class="card-body-1">
+            <h3 class="card-title-1">Qualification List</h3>
+            <ul class="list-group">
+              <li class="list-group-item">Copy of Birth Certificate <i id ="tick" class="fa-solid fa-list-check"></i></li>
+              <li class="list-group-item">Copy of ID <i id ="tick" class="fa-solid fa-list-check"></i></li>
+              <li class="list-group-item">Police Clearance <i id ="tick" class="fa-solid fa-list-check"></i></li>
+              <li class="list-group-item">Dependence Certificate <i id ="tick" class="fa-solid fa-list-check"></i></li>
+              <li class="list-group-item">Other Qualifications <i id ="tick" class="fa-solid fa-list-check"></i></li>
+            </ul>
+            <h3 class="card-title-1">Qualifications File  <i class="fa-solid fa-file" id="icon-1"></i></h3>
+          </div>
+        </div> -->
+
+
+        
+          
+      
+    
+  </div>
+
+  <!-- <div class="container mt-5"> -->
+    <!-- <h2>User Deactivation</h2> -->
+    <!-- <button class="btn btn-danger" (click)="deactivateUser()">Deactivate</button>
+    
+    <div *ngIf="showReasonInput">
+      <div class="mt">
+        <label for="reason">Reason for Deactivation:</label>
+        <textarea class="form-control" id="reason" [(ngModel)]="deactivationReason"></textarea>
+      </div>
+      <button class="btn btn-primary mt-3" (click)="submitDeactivation()">Submit</button>
+    </div>
+  </div> -->
+  
+
+  
+
+
+
+
+
+  

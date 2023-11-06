@@ -1,0 +1,227 @@
+<div class="path">
+  Baby-Details > Growth Measurements
+</div>
+<div class="title my-3">
+  <div class="card-body">
+    <h1 class="card-title">Growth Measurements</h1>
+  </div>
+  <img src="../../assets/baby-growth.png" class="title-img-top" alt="...">
+</div>
+<div class="main-container">
+  <div class="tables">
+    <h1>Tables</h1>
+    <div class="d-grid gap-2 d-md-flex pb-1 justify-content-md-end">
+      <button type="button" class="btn btn-secondary btn-sm"  data-bs-toggle="modal" data-bs-target="#heightModal"> Add New Measurement </button>
+    </div>
+    <div class="table-row d-flex">
+
+      <div class="table">
+        <h2>Height</h2>
+        <!-- Modal -->
+        <div class="modal fade" id="heightModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Height</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form [formGroup]="myForm">
+                  <label for="height" class="form-label">Height or Length</label>
+                  <input type="text" id="height" formControlName="height" class="form-control">
+                  <div class="form-text">
+                    Please add baby's height in Centimeters.
+                  </div>
+                  <label for="weight" class="form-label">Weight</label>
+                  <input type="text" id="weight" formControlName="height" class="form-control">
+                  <div class="form-text">
+                    Please add baby's weight in grams.
+                  </div>
+                  <label for="circumference" class="form-label">Head circumference</label>
+                  <input type="text" id="circumference" formControlName="height" class="form-control">
+                  <div class="form-text">
+                    Please add baby's head circumference in Centimeters.
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" (click)="addMeasurements()">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--    displaying measurement related to height-->
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">Height(cm)</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>2023-10-10</td>
+            <td> 54</td>
+
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>2023-10-18</td>
+            <td>54.8</td>
+
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>2023-11-01</td>
+            <td colspan="2">55.5</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table">
+        <h2>Weight</h2>
+        <!--        weight table-->
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">Weight(g)</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>2023-10-10</td>
+            <td>3800</td>
+
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>2023-10-18</td>
+            <td>3950</td>
+
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>2023-11-01</td>
+            <td colspan="2">4050</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table">
+        <h2>Head circumference</h2>
+
+        <!--        <form (ngSubmit)="addRow(dateInput.value, circumferenceInput.value)">-->
+        <!--          <div class="form-group">-->
+        <!--            <label for="dateInput">Date:</label>-->
+        <!--            <input type="text" id="dateInput" name="date" [(ngModel)]="dateInput" required>-->
+        <!--          </div>-->
+        <!--        <div class="form-group">-->
+        <!--          <label for="circumferenceInput">Head Circumference:</label>-->
+        <!--          <input type="text" id="circumferenceInput" name="circumference"  required>-->
+        <!--        </div>-->
+        <!--        <button type="submit">Add Row</button>-->
+        <!--        </form>-->
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">H. circumference(cm)</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>2023-10-10</td>
+            <td>35.5</td>
+
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>2023-10-18</td>
+            <td>35.7</td>
+
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>2023-11-01</td>
+            <td colspan="2">37</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="table">
+      <h2>Summary of the tables</h2>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Chart</th>
+          <th scope="col">Status</th>
+          <th scope="col">Comment</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td>There</td>
+          <td>is no</td>
+          <td>analysis data</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="Charts">
+    <h1>Charts</h1>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000" style="text-align: center">
+          <h3>Weight-Age</h3>
+          <img src="../../assets/graph1.png" class="d-block " alt="..." height="500px" >
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000" style="text-align: center">
+          <h3>Length-Age</h3>
+          <img src="../../assets/graph2.jpeg" class="d-block " alt="..." width="500px">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item" style="text-align: center">
+          <img src="../../assets/graph3.jpeg" class="d-block" alt="..." width="500px">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+  </div>
+</div>

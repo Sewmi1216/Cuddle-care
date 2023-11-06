@@ -1,0 +1,72 @@
+<div style="margin-left: 30px;" xmlns="http://www.w3.org/1999/html">
+  <img [src]="profile" alt="profileImg" width="200" height="200" class="rounded-circle">
+
+
+</div>
+<div style="padding-left: 10px;padding-top: 20px;padding-right: 10px;margin-top: 0px">
+  <span class="d-none d-sm-inline mx-1" style="font-size: 11px; text-align:center; font-weight: bold;">{{user.role}}</span>
+  <div
+    routerLink="/parent/parent_dashboard"
+    #dashboard="routerLinkActive"
+    routerLinkActive
+    [ngStyle]="{'background-color': dashboard.isActive ? '#7E57C2' : '', 'color': dashboard.isActive ? '#fff' : ''}">
+    <i class="fas fa-th"></i>
+    <label>Dashboard</label>
+  </div>
+
+  <div
+    routerLink="/parent/view_baby_sitters"
+
+    #searchBabysitters="routerLinkActive"
+    routerLinkActive
+    [ngStyle]="{'background-color': searchBabysitters.isActive ? '#7E57C2' : '', 'color': searchBabysitters.isActive ? '#fff' : ''}">
+
+    <i class="fas fa-search"></i>
+    <label>Search Babysitters</label>
+  </div>
+
+
+
+  <div
+    [routerLink]="['/parent/baby_details', parent._id]"
+    #babyDetails="routerLinkActive"
+    routerLinkActive
+    [ngStyle]="{'background-color': babyDetails.isActive ? '#7E57C2' : '', 'color': babyDetails.isActive ? '#fff' : ''}">
+
+    <i class="fas fa-baby"></i>
+    <label>Baby Details</label>
+  </div>
+  <div
+    routerLink="/parent/task_list_home"
+
+    #taskListHome="routerLinkActive"
+    routerLinkActive
+    [ngStyle]="{'background-color': taskListHome.isActive ? '#7E57C2' : '', 'color': taskListHome.isActive ? '#fff' : ''}">
+
+    <i class="fas fa-clipboard-list"></i>
+    <label>Task List</label>
+  </div>
+
+  <div
+
+    routerLink="/parent/complaints"
+
+    #complaints="routerLinkActive"
+    routerLinkActive
+    [ngStyle]="{'background-color': complaints.isActive ? '#7E57C2' : '', 'color': complaints.isActive ? '#fff' : ''}">
+    <i class="fas fa-users"></i>
+    <label>Complaints</label>
+  </div>
+
+
+
+ <div *ngIf="myplan === 'premium'"
+    routerLink="/parent/live_stream"
+    #live="routerLinkActive"
+    routerLinkActive
+    [ngStyle]="{'background-color': live.isActive ? '#7E57C2' : '', 'color': live.isActive ? '#fff' : ''}">
+    <i class="fas fa-tv"></i>
+    <label>Live Stream</label>
+  </div>
+</div>
+
